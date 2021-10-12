@@ -1,49 +1,32 @@
 import React, { useState } from 'react';
-import Login from "./pages/Login";
-import Nav from "./components/Nav";
-import { BrowserRouter, Route } from "react-router-dom";
+import './App.css'
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Nav from "./components/Nav/";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
+import Footer from './components/Footer';
+import Login from './pages/Login/'
+
 
 export const UserContext = React.createContext()
 
-function App() {
+const App = () => {
   const [name, setName] = useState('');
   const [manager, setManager] = useState('')
-
-/*   useEffect(() => {
-    (
-      async () => {
-        const response = await fetch('http://localhost:8000/api/user', {
-          headers: { 'Content-Type': 'application/json' },
-          credentials: 'include',
-        });
-        if (response.ok) {
-          const content = await response.json();
-
-          setName(content.name);
-          setManager(content.is_manager)
-        } else {
-          console.log('no response')
-        }
-
-      }
-    )();
-  }); */
-
   return (
+    <div className='App'>
     <UserContext.Provider value={{ name: name, setName: setName, manager: manager, setManager: setManager }}>
-      <div className="App">
-        <BrowserRouter>
+        <Router>
           <Nav />
           <main className="form-signin">
-            <Route path="/" exact component={<Home />} />
-            <Route path="/login" component={<Login />} />
+            <Route path="/" exact component={Home} />
+            <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
           </main>
-        </BrowserRouter>
-      </div>
+          <Footer />
+        </Router>
     </UserContext.Provider>
+    </div>
   );
 }
 

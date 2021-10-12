@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Home = ({name}) => {
-console.log(name)
+const Home = () => {
+
     return (
         <div>
-            {name ? `Hi ${name}` : 'You are not logged in'}
+            Home
+            {/* {name ? `Hi ${name}` : 'You are not logged in'} */}
         </div>
     );
 };

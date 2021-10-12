@@ -1,0 +1,41 @@
+.top {
+  width: 100%;
+  background-color: #023051;
+}
+
+.bg {
+  background-color: #023051;
+}
+
+.logo {
+  width: 80px;
+}
+
+h6 {
+  color: #f5f5f5;
+}
+
+.btn-close {
+  color: #f5f5f5;
+}
+
+Link {
+  text-decoration: none;
+  color: #f5f5f5;
+}
+
+.userName {
+  color: #f5f5f5;
+  font-size: 24px;
+}
+
+.user{
+  position: relative;
+  display: block;
+  right: 10px;
+  float: right;
+}
+
+.icon {
+  color: #f5f5f5;
+}
