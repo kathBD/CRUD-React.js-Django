@@ -1,0 +1,23 @@
+.nav{
+  position:relative;
+  z-index: 700;
+
+}
+
+.container{
+  
+  display: flex;
+ 
+ 
+  
+
+}
+.content{
+    
+    flex: 1;
+}
+.footer{
+  flex: 1;
+}
+
+

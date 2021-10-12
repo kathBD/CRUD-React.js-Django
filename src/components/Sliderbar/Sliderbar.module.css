@@ -1,0 +1,32 @@
+@import 'https://fonts.googleapis.com/css2? family = Roboto: ital, wght @ 0,400; 1,100 & display = swap';
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.slider{
+    width: 240px;
+    height: calc(90vh - 48px) ;
+    border: 2px solid #fff;
+    background-color: #023051;
+
+}
+ul{
+    list-style: none;
+    padding: 15px 30px;
+}
+li{
+    margin-bottom: 25px;
+    margin-top: 25px;
+    padding-left: 2px;
+       
+}
+a{
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: azure;
+    font-size: 12px;
+    padding-left: 5px;
+}

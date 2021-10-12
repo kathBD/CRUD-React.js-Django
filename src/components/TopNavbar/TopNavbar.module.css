@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+   
+}
+.top {
+    width: 100%;
+    height: 70px;
+    background-color: #023051;
+    top: 1px;
+    z-index: 999;
+  
+  }
+  .left{
+    padding-top: 30px;
+
+  }
+  
+  .wrapper {
+    height: 100%;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    padding-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  
+  .topRight{
+      display: flex;
+      align-items: center;
+  }
+  
+  .IconContainer {
+    position: relative;
+    margin-right:20px ;
+    cursor: pointer;
+    float: left;
+   
+  
+  }
+  .user{
+    position: relative;
+    display: block;
+    right: 10px;
+    color: azure;
+    float: right;
+    
+
+  }
+
+
