@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'users'
+    'users',
+    'apiC',
 ]
 
 MIDDLEWARE = [
@@ -68,10 +69,14 @@ WSGI_APPLICATION = 'auth.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_api',
         'HOST': 'localhost',
+        'PORT':'3306',
         'USER': 'root',
-        'PASSWORD': 'root'
+        'PASSWORD': 'Root',
+        'NAME': 'CRUD_react_djangodb',
+        'OPTIONS':{ 
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
 
@@ -118,3 +123,5 @@ AUTH_USER_MODEL = 'users.User'
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
