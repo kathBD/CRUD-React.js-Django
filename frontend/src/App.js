@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Footer from './components/Footer';
 import Login from './pages/Login/'
 import Products from './pages/Products';
+import Edit from './components/ManagerProducts/Edit/EditProducts'
 
 
 export const UserContext = React.createContext()
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/" exact component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/products" component={Products} />
+            <Route path="/updateproducts/:id" component={Edit} />
             
             {/* <Route path="/register" component={Register} /> */}
           </main>

@@ -3,6 +3,9 @@ const  API_URL='http://127.0.0.1:8000/apiC/products/';
 export const listProducts= async ()=>{
     return await fetch(API_URL);
 }
+export const getProducts= async (productId)=>{
+    return await fetch(`${API_URL}${productId}`)
+}
 
 
 export const registerProduct= async (newProduct)=>{
@@ -21,8 +24,8 @@ export const registerProduct= async (newProduct)=>{
         })
     });
 }
-export const deleteProduct = async (ptroductId) => {
-    return await fetch(`${API_URL}${ptroductId}`, {
+export const deleteProduct = async (productId) => {
+    return await fetch(`${API_URL}${productId}`, {
         method: 'DELETE'
     });
 };

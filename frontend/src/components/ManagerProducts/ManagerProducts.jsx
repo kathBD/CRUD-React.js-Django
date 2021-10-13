@@ -5,15 +5,13 @@ import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 
 import * as ManagerProductsServer from './ManagerProductsServer'
 import { UserContext } from '../../App';
-import { useHistory, useParams } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
 
 const ManagerProducts = () => {
     const [products, setProducts]= useState([]);
     const value = useContext(UserContext)
     const [modalAdd, setModalAdd]=value.modalAdd;
 
-    const history = useHistory();
     // peticion a la API
     const listProducts= async () => {
         try{
@@ -77,20 +75,20 @@ const ManagerProducts = () => {
     }
 
     //editar iuna tabla
+ 
+
+   const history = useHistory();
     const [modalEdit, setModalEdit] = useState(false);
     const edit=()=>{
 
-        console.log(modalEdit)
+        // console.log(modalEdit)
         setModalEdit(!modalEdit);
-        console.log(modalEdit)
+        // console.log(modalEdit)
+        // console.log(id)
+
     }
-    const params = useParams();
-    console.log(params);
+
     
-    const modalsAdds=()=>{
-        history.push();
-        edit();
-    }
     return (
         <div className="container">
         <div className={prodcss.title}>
@@ -128,17 +126,26 @@ const ManagerProducts = () => {
                     <td className="col-md-2 ">{product.pro_description}</td>
                     <td className="col-md-1">{product.pro_category}</td>
                     <td className="col-md-1" >
-                    <button clasName={prodcss.btn} className="btn btn-primary btn-xs" onClick={modalsAdds} ><FaIcons.FaRegEdit color="#fff" size='15px' padding='2px' /></button>
+                    <button clasName={prodcss.btn} className="btn btn-primary btn-xs" 
+                    onClick={
+                        function(){
+                        history.push(`/updateproducts/${product.id}`);
+                        // setId(product.id)   
+                        edit();
+                        // console.log(product.id)
+                        }
+                        } ><FaIcons.FaRegEdit color="#fff" size='15px' padding='2px' /></button>
+
                     <button clasName={prodcss.btn}  className="btn btn-danger btn-xs" onClick={()=>product.id && handleDelete(product.id)}><FaIcons.FaTrashAlt color="#fff" size='15px' padding='2px' /></button>
-          
+        
                     </td>
-          
+        
                 </tr>
                 ))}
             </tbody>
         </table>
       {/* //modal table add products */}
-      <Modal isOpen={modalAdd} >
+        <Modal isOpen={modalAdd} >
             <ModalHeader>
             <div>
                 <h3>Agregar Producto</h3>
@@ -180,48 +187,6 @@ const ManagerProducts = () => {
         </ModalFooter>
                 </Modal>
 
-        {/* edit product */}
-
-        <Modal isOpen={modalEdit}>
-                <ModalHeader>
-                <div>
-                    <h3>Editar Producto</h3>
-                </div>
-                </ModalHeader>
-                <ModalBody>
-            <form className="form-group">
-                <label>ID</label>
-                <input className="form-control" readOnly type="text" name="id"/>
-                <br />
-                <label>Nombre</label>
-                <input className="form-control" type="text" name="nombre"/>
-                <br />
-                <label>Proveedor</label>
-                <input className="form-control" type="text" name="proveedor"/>
-                <br />
-                <label>Existencia</label>
-                <input className="form-control" type="text" name="existencia"/>
-                <br />
-                <label>Fecha</label>
-                <input className="form-control" type="data" name="pro_date"/>
-                <br />
-        
-                <label>Descripción</label>
-                <input
-                className="form-control" type="text" name="Descripción"/>
-                <br />
-
-            <label>Categoria</label>
-            <input className="form-control" type="text" name="Descripción"/>
-                <br />
-        </form>
-            
-        </ModalBody>
-        <ModalFooter>
-        <button className="btn btn-primary">Actualizar</button>
-        <button className="btn btn-danger" onClick={edit}> cancelar </button>
-            </ModalFooter>
-            </Modal>
         </div>
     )
 }
