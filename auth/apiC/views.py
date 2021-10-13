@@ -32,7 +32,7 @@ class UsersCrudView(View):
         # print(request.body)
         jd=json.loads(request.body)
         # print(jd)
-        Products.objects.create(name=jd['pro_name'], pro_provider=jd['pro_provider'], pro_existences=jd['pro_existences'], pro_date=jd['pro_date'], pro_description=jd['pro_description'],pro_category=jd['pro_category'])
+        Products.objects.create(pro_name=jd['pro_name'], pro_provider=jd['pro_provider'], pro_existences=jd['pro_existences'], pro_date=jd['pro_date'], pro_description=jd['pro_description'],pro_category=jd['pro_category'])
         datos={'message':"Success"}
         return JsonResponse(datos) 
 
