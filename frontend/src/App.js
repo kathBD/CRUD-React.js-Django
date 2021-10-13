@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Footer from './components/Footer';
 import Login from './pages/Login/'
 import Products from './pages/Products';
-import Edit from './components/ManagerProducts/Edit/EditProducts'
+import Edit from './components/Edit/EditProducts'
 
 
 export const UserContext = React.createContext()

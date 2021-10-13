@@ -24,6 +24,27 @@ export const registerProduct= async (newProduct)=>{
         })
     });
 }
+
+export const updateProduct= async (productId,updateproducts)=>{
+    return await fetch(`${API_URL}${productId}`,{
+        method:'PUT',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({
+            "pro_name": String(updateproducts.pro_name),
+            "pro_provider": String(updateproducts.pro_provider),
+            "pro_existences": parseInt(updateproducts.pro_existences),
+            "pro_date": parseInt(updateproducts.pro_date),
+            "pro_description": String(updateproducts.pro_description),
+            "pro_category": String(updateproducts.pro_category),
+        })
+    });
+}
+
+
+
+
 export const deleteProduct = async (productId) => {
     return await fetch(`${API_URL}${productId}`, {
         method: 'DELETE'

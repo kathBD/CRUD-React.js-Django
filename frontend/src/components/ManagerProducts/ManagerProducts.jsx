@@ -47,8 +47,6 @@ const ManagerProducts = () => {
     }
     const [addProducts, setAddProducts]=useState(initialState)
     const handleInputChangue = e=>{
-        // console.log(e.target.name)
-        // console.log(e.target.value)
         setAddProducts({ ...addProducts,[e.target.name]: e.target.value})
     }
     const handleSubmit= async e=>{
@@ -168,7 +166,7 @@ const ManagerProducts = () => {
                 <input className="form-control" type="text" name="pro_existences" value={addProducts.pro_existences} onChange={handleInputChangue}/>
                 <br />
                 <label>Fecha</label>
-                <input className="form-control" type= "pro_date" 
+                <input className="form-control" type= "datetime-local" 
                 // eslint-disable-next-line react/jsx-no-duplicate-props
                 type="pro_datetime-local" 
                 name="pro_date" value={addProducts.pro_date} onChange={handleInputChangue}/>
