@@ -37,7 +37,7 @@ class LoginView(APIView):
         response.data = {
             'jwt': token,
             'name': user.name,
-            'manager': user.is_manager
+            'manager': user.manager
         }
         return response
 

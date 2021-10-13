@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../App';
 
 const Home = () => {
 
+    const { manager, name } = useContext(UserContext)
+    const isManager = Boolean(manager)
+
     return (
         <div>
-            Home
-            {/* {name ? `Hi ${name}` : 'You are not logged in'} */}
+            {isManager ? 'Soy administrador' : 'No soy administrador'}
+            {name ? `Hi ${name}` : 'You are not logged in'}
+            
         </div>
     );
 };
