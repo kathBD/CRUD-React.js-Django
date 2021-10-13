@@ -188,7 +188,7 @@ const Home = () => {
 
                                             Visitantes
                                         </h3>
-                                     
+                                    
                                     </div>
                                     <div className="card-body">
                                         <div className="row">

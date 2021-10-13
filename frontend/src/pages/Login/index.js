@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Redirect } from "react-router-dom";
 import { UserContext } from '../../App';
 import logo from '../../assets/Logo/logo.png'
-
+import css from './Login.module.css'
 
 const Login = () => {
 
@@ -10,7 +10,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
-
+    const [loginAllowed, setLoginAllowed] = useState(true)
 
     const submit = async (e) => {
         e.preventDefault();
@@ -24,14 +24,20 @@ const Login = () => {
             })
         });
 
+        if (response.ok) {
+            
         const content = await response.json();
         setRedirect(true);
         setName(content.name);
         setManager(content.manager)
+        } else {
+            console.log(response)
+            setLoginAllowed(false)
+        }
     }
 
     if (redirect) {
-        return <Redirect to="/" />;
+        return <Redirect to="/" />
     }
 
     return (
@@ -47,24 +53,17 @@ const Login = () => {
                                         <input type="email" className="form-control" placeholder="Email address" required
                                             onChange={e => setEmail(e.target.value)}
                                         />
-                                        <label for="floatingInput">Email</label>
+                                        <label htmlFor="floatingInput">Email</label>
                                     </div>
                                     <div className="form-floating mb-3">
                                         <input type="password" className="form-control" placeholder="Password" required
                                             onChange={e => setPassword(e.target.value)}
                                         />
-                                        <label for="floatingPassword">Password</label>
+                                        <label htmlFor="floatingPassword">Password</label>
                                     </div>
-
-                                    <div class="form-check mb-3">
-                                        <input className="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" />
-                                        <label className="form-check-label" for="rememberPasswordCheck">
-                                            Remember password
-                                        </label>
-                                    </div>
+                                    <span className={css.alert} style={ loginAllowed ? {display: 'none'} : {display: 'block'}}>Usuario ó Contraseña incorrecta</span>
                                     <div className="d-grid">
-                                        <button className="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign
-                                            in</button>
+                                        <button className="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Ingresar</button>
                                     </div>
                                 </form>
                             </div>
@@ -76,4 +75,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Login
