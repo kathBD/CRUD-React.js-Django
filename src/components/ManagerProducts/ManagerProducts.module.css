@@ -1,0 +1,39 @@
+*{
+    font-family: 'Roboto', sans-serif;
+ 
+}
+.content{
+    display: flex;
+    flex: 4;
+}
+
+.title{
+    height: 30px;
+    background-color:#023051;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    align-items: center;  
+    font-size: 12px;
+  
+}
+
+#content {
+    
+    height: 10px;
+  
+}
+td{
+    font-size: 12px; 
+    }
+    
+    th{
+    font-size: 12px; 
+    }

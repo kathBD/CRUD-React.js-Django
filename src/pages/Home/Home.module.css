@@ -1,0 +1,8 @@
+.content{
+    display: flex;
+    flex: 4;
+}
+
+.card-text {
+    color: #fff;
+}

@@ -1,0 +1,12 @@
+.footer{
+  height: 30px;
+  color: var(--gray);
+  background-color: #023051;
+  margin: 0;
+}
+
+.text {
+  padding: 5px;
+  font-size: 15px;
+  margin: 0;
+}
