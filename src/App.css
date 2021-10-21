@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:ital@0;1&display=swap');
+
+:root {
+  /* COLORS */
+  --blue: #023051;
+  --gray: #c6c6c6;
+
+  /* FONTS */
+  --primary: 'Poppins', sans-serif;
+  --secundary: 'Raleway', sans-serif; 
+
+  /* FONT WEIGHT */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--primary);
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
